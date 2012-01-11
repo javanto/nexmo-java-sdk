@@ -11,8 +11,8 @@
 	<name>Nexmo Java SDK</name>
 
 	<scm>
-		<connection>scm:git:git@github.com:javanto/nexmo-java-sdk.git</connection>
-		<developerConnection>scm:git:git@github.com:javanto/nexmo-java-sdk.git</developerConnection>
+		<connection>scm:git:git://git@github.com/javanto/nexmo-java-sdk.git</connection>
+		<developerConnection>scm:git:git://git@github.com/javanto/nexmo-java-sdk.git</developerConnection>
 		<url>https://github.com/javanto/nexmo-java-sdk</url>
 	</scm>
 
