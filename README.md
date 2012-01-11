@@ -1,3 +1,7 @@
+# Quick Start
+
+For examples see [nexmo-java-sdk-examples](https://github.com/javanto/nexmo-java-sdk-examples).
+
 # Installation
 
 To include the SDK on your Maven managed project just add to `pom.xml`:
