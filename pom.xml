@@ -97,7 +97,6 @@
 				<configuration>
 					<!-- During release:perform, enable the "release" profile -->
 					<releaseProfiles>release</releaseProfiles>
-					<goals>deploy assembly:assembly</goals>
 				</configuration>
 			</plugin>
 		</plugins>
