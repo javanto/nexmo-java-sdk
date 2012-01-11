@@ -19,43 +19,46 @@
 	<profiles>
 		<profile>
 			<id>release</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
 			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>com.github.github</groupId>
-							<artifactId>downloads-maven-plugin</artifactId>
-							<version>0.3</version>
-							<configuration>
-								<description>${project.version} release of ${project.name}</description>
-								<override>true</override>
-								<includeAttached>true</includeAttached>
-							</configuration>
-							<executions>
-								<execution>
-									<goals>
-										<goal>upload</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-						<plugin>
-							<groupId>com.github.github</groupId>
-							<artifactId>site-maven-plugin</artifactId>
-							<version>0.3</version>
-							<configuration>
-								<message>Creating site for ${project.version}</message>
-							</configuration>
-							<executions>
-								<execution>
-									<goals>
-										<goal>site</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-					</plugins>
-				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>com.github.github</groupId>
+						<artifactId>downloads-maven-plugin</artifactId>
+						<version>0.3</version>
+						<executions>
+							<execution>
+								<configuration>
+									<description>${project.version} release of ${project.name}</description>
+									<override>true</override>
+									<includeAttached>true</includeAttached>
+								</configuration>
+								<goals>
+									<goal>upload</goal>
+								</goals>
+								<phase>deploy</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.github.github</groupId>
+						<artifactId>site-maven-plugin</artifactId>
+						<version>0.3</version>
+						<executions>
+							<execution>
+								<configuration>
+									<message>Creating site for ${project.version}</message>
+								</configuration>
+								<goals>
+									<goal>site</goal>
+								</goals>
+								<phase>site</phase>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
@@ -98,6 +101,7 @@
 				<configuration>
 					<!-- During release:perform, enable the "release" profile -->
 					<releaseProfiles>release</releaseProfiles>
+					<goals>deploy</goals>
 				</configuration>
 			</plugin>
 		</plugins>
