@@ -19,12 +19,15 @@
 	<profiles>
 		<profile>
 			<id>release</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
 						<groupId>com.github.github</groupId>
 						<artifactId>downloads-maven-plugin</artifactId>
-						<version>0.3</version>
+						<version>0.4</version>
 						<configuration>
 							<description>${project.version} release of ${project.name}</description>
 							<override>true</override>
@@ -42,7 +45,7 @@
 					<plugin>
 						<groupId>com.github.github</groupId>
 						<artifactId>site-maven-plugin</artifactId>
-						<version>0.3</version>
+						<version>0.4</version>
 						<configuration>
 							<message>Creating site for ${project.version}</message>
 						</configuration>
@@ -96,9 +99,25 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.0-beta-8</version>
 				<configuration>
-					<!-- During release:perform, enable the "release" profile -->
-					<releaseProfiles>release</releaseProfiles>
-					<goals>deploy assembly:assembly</goals>
+					<goals>deploy ghDownloads:upload site ghSite:site</goals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>0.4</version>
+				<configuration>
+					<description>${project.version} release of ${project.name}</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.4</version>
+				<configuration>
+					<message>Creating site for ${project.version}</message>
 				</configuration>
 			</plugin>
 		</plugins>
