@@ -33,13 +33,6 @@
 							<override>true</override>
 							<includeAttached>true</includeAttached>
 						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>upload</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 					<plugin>
 						<groupId>com.github.github</groupId>
@@ -48,13 +41,6 @@
 						<configuration>
 							<message>Creating site for ${project.version}</message>
 						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>site</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
