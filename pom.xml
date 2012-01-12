@@ -99,7 +99,7 @@
 				<configuration>
 					<!-- During release:perform, enable the "release" profile -->
 					<releaseProfiles>release</releaseProfiles>
-					<goals>deploy downloads:upload site:site</goals>
+					<goals>deploy ghDownloads:upload ghSite:site</goals>
 				</configuration>
 			</plugin>
 		</plugins>
