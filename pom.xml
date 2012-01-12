@@ -95,7 +95,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.2.2</version>
 				<configuration>
-					<releaseProfiles>release</releaseProfiles>
+					<releaseProfiles>release,github</releaseProfiles>
 				</configuration>
 			</plugin>
 			<plugin>
