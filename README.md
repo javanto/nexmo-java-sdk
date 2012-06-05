@@ -8,7 +8,7 @@ To include the SDK on your Maven managed project just add to `pom.xml`:
 
     <repository>
       <id>javanto-releases</id>
-      <url>https:*raw.github.com/javanto/repository/releases</url>
+      <url>https://raw.github.com/javanto/repository/releases</url>
       <releases>
         <enabled>true</enabled>
       </releases>
